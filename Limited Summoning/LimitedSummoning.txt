@@ -1,0 +1,32 @@
+#ifndef _FE8_
+    ERROR "You're not assembling to an FE8 ROM!"
+#endif
+
+#include EAStdlib.event
+#include "Extensions/Hack Installation.txt"
+
+#ifndef FreeSpace
+    #define FreeSpace 0xB2A610
+    ORG FreeSpace
+#endif
+
+PUSH
+ORG $243DC
+jumpToHack(CommandUsabilityTack|1)
+ORG $B9EAC
+jumpToHack(PiggybackASM|1)
+ORG $7AD38
+jumpToHack(YoinkTheBoi|1)
+POP
+
+ALIGN 4
+CommandUsabilityTack:
+#incbin "CommandUsabilityTack.dmp"
+
+ALIGN 4
+PiggybackASM:
+#incbin "PiggybackASM.dmp"
+
+ALIGN 4
+YoinkTheBoi:
+#incbin "YoinkTheBoi.dmp"
