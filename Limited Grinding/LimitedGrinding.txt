@@ -1,0 +1,32 @@
+#ifndef _FE8_
+    ERROR "You're not assembling to an FE8 ROM!"
+#endif
+
+#include EAStdlib.event
+#include "Extensions/Hack Installation.txt"
+
+#ifndef FreeSpace
+    #define FreeSpace 0xB2A610
+    ORG FreeSpace
+#endif
+
+PUSH
+ORG $B8D14
+jumpToHack(EnterDaTowerCheck|1)
+ORG $B92F0
+jumpToHack(EnterDaTowerCheckv2|1)
+ORG $B9EAC
+jumpToHack(AddTowerCount|1)
+POP
+
+ALIGN 4
+EnterDaTowerCheck:
+#incbin "EnterDaTowerCheck.dmp"
+
+ALIGN 4
+AddTowerCount:
+#incbin "AddTowerCount.dmp"	
+
+ALIGN 4
+EnterDaTowerCheckv2:
+#incbin "EnterDaTowerCheckv2.dmp"	
