@@ -13,7 +13,13 @@
 PUSH
 ORG $BB5C0
 jumpToHack(chaptercheck|1)
+ORG $B8A68
+jumpToHack(mapreload|1)
 POP
+
+ALIGN 4
+mapreload:
+#incbin "mapreloader.dmp"
 
 ALIGN 4
 chaptercheck:

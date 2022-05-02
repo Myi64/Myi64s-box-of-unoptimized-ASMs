@@ -18,7 +18,7 @@ strb r2,[r0]
 MOV r2, #0x4F
 ldr r0,=#0x03005268
 strb r2,[r0]
-ldr r2,=#0x9000001
+ldr r2,=EnterTower
 LDR r0,=#0x08A3D748
 blh 0x08002E9C
 MOV r1, #0xE
